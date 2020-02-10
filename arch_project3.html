@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="my_style.css">
+    <title> Architecture Project </title>
+
+    <script>
+        var start = 18;
+        var end = 22;
+        var i = start;
+        function nextImg(){
+            i++;
+            var next = document.getElementById("nImg");
+            next.src = "img/arch/A" + i + ".jpg";
+            next.alt = "Arch_P1-" + (i - 2);
+            if(i == end){
+                i = start-1;
+            } 
+        }
+        function lastImg(){
+            if(i == start){
+                i = end+1;
+            } 
+            i--;
+            var next = document.getElementById("nImg");
+            next.src = "img/arch/A" + i + ".jpg";
+            next.alt = "Arch_P1-" + (i - 2);
+        }
+    </script>
+
+    <body>
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                <a href="index.html#home" class="w3-bar-item w3-button"><b>JICHEN</b> WANG</a>
+                <!-- Float links to the right. Hide them on small screens -->
+                <div class="w3-right w3-hide-small">
+                    <a href="index.html#arch" class="w3-bar-item w3-button">Architecture</a>
+                    <a href="index.html#comp" class="w3-bar-item w3-button">Computation</a>
+                    <a href="index.html#about" class="w3-bar-item w3-button">About</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="w3-wide project-header" >
+            <div class="w3-center">
+                <h1 class="w3-xlarge">MEMORY FRAGMENT</h1>
+                <p class="w3-middle w3-text-gray">A market for residents to activate the Suzhou river</p>
+            </div>
+        </header>
+
+        <!-- Page content -->
+        <div class="w3-content w3-display-container limit-width">
+            <button class="img-button w3-display-left" onclick="lastImg()">
+                <img src="img/left.png" style="width:30px">
+            </button>
+            <button class="img-button w3-display-right" onclick="nextImg()">
+                <img src="img/right.png" style="width:30px">
+            </button>
+            <div class="w3-center">
+                <img src="img/arch/A18.jpg" id="nImg" alt="Arch_P1-1" style="width:100%">
+            </div>
+        <!-- End page content -->
+        </div>
+    </body>
+</html>

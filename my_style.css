@@ -1,0 +1,38 @@
+body, html {
+    height: 100%;
+}
+
+.bgimg {
+    background-position: center;
+    background-image: url("img/background.jpg");
+    min-height: 100%;
+}
+
+.project-header {
+    margin-top: 80px;
+}
+
+.green-color {
+    color:#3a8f74;
+}
+
+.green-background {
+    background:#3a8f74;
+}
+
+.limit-width {
+    max-width: 1200px;
+}
+
+.img-button {
+    border: none;
+    background-color: transparent;
+    outline:none;
+    opacity: 0.5;
+    margin: 10px;
+}
+
+.img-button:hover {
+    opacity: .8;
+    cursor: pointer;
+}
