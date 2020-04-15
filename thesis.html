@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="my_style.css">
+    <link rel="stylesheet" href="slider.css">
+    <title> MAAD Thesis </title>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.0/d3.min.js"></script>
+        <script>
+            window.Jquery || document.write("<script src='source/jquery-3.4.1.min.js'></script>");
+        </script>
+    </head>
+
+    <body>
+        <!-- Navbar (sit on top) -->
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                <a href="thesis.html#home" class="w3-bar-item w3-button"><b>PHOTON</b> FACADE</a>
+                <!-- Float links to the right. Hide them on small screens -->
+                <div class="w3-right w3-hide-small">
+                    <a href="thesis.html#doc" class="w3-bar-item w3-button">Documentation</a>
+                    <a href="thesis.html#sim" class="w3-bar-item w3-button">Simulation</a>
+                    <a href="thesis.html#pro" class="w3-bar-item w3-button">Prototype</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="w3-wide project-header" id="home">
+            <div class="w3-center w3-padding-16">
+                <h1 class="w3-xlarge">PHOTON FACADE</h1>
+                <p class="w3-middle w3-text-gray">A Light Responsive Facade System Design</p>
+            </div>
+        </header>
+
+        <!-- Page content -->
+        <div class="w3-content w3-display-container limit-width">
+            <div class="w3-center">
+                <img src="img/thesis/render0.jpg" id="image" alt="render-0" style="width:100%">
+                <h4 class=" w3-padding-16 green-color">TYPE</h4>
+                <input type="range" min="0" max="5" value="0" class="slider" id="type">
+                <h4 class=" w3-padding-16 green-color">DIVISION</h4>
+                <input type="range" min="2" max="4" value="4" class="slider" id="division">
+                <h4 class=" w3-padding-16 green-color">EVENNESS</h4>
+                <input type="range" min="0" max="1" value="0" class="slider" id="evenness">
+            </div>
+        </div>
+        <!-- End page content -->
+
+        <script>
+            var even = document.getElementById("evenness");
+            var type = document.getElementById("type");
+            var div = document.getElementById("division");
+            var img = document.getElementById("image");
+            var index = 0;
+            
+            setImage(even, type, div);
+
+            even.oninput = function() {
+                setImage(even, type, div);
+            }
+            type.oninput = function() {
+                setImage(even, type, div);
+            }
+            div.oninput = function() {
+                setImage(even, type, div);
+            }
+
+            function setImage(e, t, d) {
+                ev = e.value;
+                tv = t.value;
+                dv = d.value;
+                img.src = "img/thesis/render_" + ev + "_" + tv + "_" + dv + ".gif";
+                img.alt = "Render-" + ev + "_" + tv + "_" + dv;
+            }
+            
+        </script>
+    </body>
+</html>
