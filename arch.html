@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="my_style.css">
+    <link rel="stylesheet" href="loader_gooey.css">
+
+    <head>
+        <title> Jichen Wang </title>
+        <link rel="icon" href="img/logo.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    </head>
+
+    <body onload="load()">
+        <!-- Loader -->
+        <div id="loader" class="gooey">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div id="content" class="animate-bottom">
+
+            <!-- Navbar (sit on top) -->
+            <div class="w3-top">
+                <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                    <a href="index.html" class="w3-bar-item w3-button"><b>JICHEN</b> WANG</a>
+                    <!-- Float links to the right. Hide them on small screens -->
+                    <div class="w3-right w3-hide-small">
+                        <a href="arch.html" class="w3-bar-item w3-button">Architecture</a>
+                        <a href="comp.html" class="w3-bar-item w3-button">Computation</a>
+                        <a href="about.html" class="w3-bar-item w3-button">About</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page content -->
+            <div class="w3-content w3-padding limit-width">
+                <!-- Architecture Section -->
+                <div class="w3-container w3-padding-32" id="arch">
+                    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Architecture</h3>
+                </div>
+                
+                <div class="w3-row-padding">
+                    <a href="arch_project1.html" class="w3-third w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <img src="img/arch/community.jpg" alt="Community" style="width:100%" class="w3-hover-opacity">
+                            <div class="w3-display-hover w3-display-middle w3-text-black">Community</div>
+                        </div>
+                    </a>
+                    <a href="arch_project2.html" class="w3-third w3-container w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <img src="img/arch/school.jpg" alt="School" style="width:100%" class="w3-hover-opacity">
+                            <div class="w3-display-hover w3-display-middle w3-text-black">Education</div>
+                        </div>
+                    </a>
+                    <a href="arch_project3.html" class="w3-third w3-container w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <img src="img/arch/market.jpg" alt="Hotel" style="width:100%" class="w3-hover-opacity">
+                            <div class="w3-display-hover w3-display-middle w3-text-black">Market</div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w3-row-padding">
+                    <a href="arch_project4.html" class="w3-third w3-container w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <img src="img/arch/hotel.jpg" alt="Market" style="width:100%" class="w3-hover-opacity">
+                            <div class="w3-display-hover w3-display-middle w3-text-black">Hotel</div>
+                        </div>
+                    </a>
+                    <a href="arch_project5.html" class="w3-third w3-container w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <img src="img/arch/church.jpg" alt="Church" style="width:100%" class="w3-hover-opacity">
+                            <div class="w3-display-hover w3-display-middle w3-text-black">Church</div>
+                        </div>
+                    </a>
+                    <a href="arch_project6.html" class="w3-third w3-container w3-margin-bottom">
+                        <div class="w3-display-container">
+                            <img src="img/arch/other.jpg" alt="Other" style="width:100%" class="w3-hover-opacity">
+                            <div class="w3-display-hover w3-display-middle w3-text-black">Other</div>
+                        </div>
+                    </a>
+                </div>
+
+            <!-- End page content -->
+            </div>
+       </div>
+    </body>
+
+    <script>
+        var myVar;
+
+        function load() {
+            myVar = setTimeout(showPage, 2000);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+    </script>
+</html>

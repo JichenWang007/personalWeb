@@ -5,25 +5,51 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="my_style.css">
     <link rel="stylesheet" href="slider.css">
-    <title> MAAD Thesis </title>
 
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.0/d3.min.js"></script>
+        <title> MAAD Thesis </title>
+        <link rel="icon" href="img/logo.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.15.0/d3.min.js"></script>
         <script>
             window.Jquery || document.write("<script src='source/jquery-3.4.1.min.js'></script>");
-        </script>
+        </script> -->
     </head>
+
+    <script>
+        var start = 1;
+        var end = 23;
+        var i = start;
+        function nextImg(){
+            if(i == end){
+                i = start-1;
+            } 
+            i++;
+            var next = document.getElementById("nImg");
+            next.src = "img/comp/thesis/Thesis_doc" + i + ".jpg";
+            next.alt = "Thesis" + i;
+        }
+        function lastImg(){
+            if(i == start){
+                i = end+1;
+            } 
+            i--;
+            var next = document.getElementById("nImg");
+            next.src = "img/comp/thesis/Thesis_doc" + i + ".jpg";
+            next.alt = "Thesis" + i;
+        }
+    </script>
 
     <body>
         <!-- Navbar (sit on top) -->
         <div class="w3-top">
             <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-                <a href="thesis.html#home" class="w3-bar-item w3-button"><b>PHOTON</b> FACADE</a>
+                <a href="index.html" class="w3-bar-item w3-button"><b>JICHEN</b> WANG</a>
                 <!-- Float links to the right. Hide them on small screens -->
                 <div class="w3-right w3-hide-small">
-                    <a href="thesis.html#doc" class="w3-bar-item w3-button">Documentation</a>
-                    <a href="thesis.html#sim" class="w3-bar-item w3-button">Simulation</a>
-                    <a href="thesis.html#pro" class="w3-bar-item w3-button">Prototype</a>
+                    <a href="arch.html" class="w3-bar-item w3-button">Architecture</a>
+                    <a href="comp.html" class="w3-bar-item w3-button">Computation</a>
+                    <a href="about.html" class="w3-bar-item w3-button">About</a>
                 </div>
             </div>
         </div>
@@ -38,45 +64,220 @@
 
         <!-- Page content -->
         <div class="w3-content w3-display-container limit-width">
+            <!-- Interation -->
+            <!-- <h3 class=" w3-padding-16 green-color">INTERACTION</h3> -->
+            <br>
             <div class="w3-center">
-                <img src="img/thesis/render0.jpg" id="image" alt="render-0" style="width:100%">
-                <h4 class=" w3-padding-16 green-color">TYPE</h4>
-                <input type="range" min="0" max="5" value="0" class="slider" id="type">
-                <h4 class=" w3-padding-16 green-color">DIVISION</h4>
-                <input type="range" min="2" max="4" value="4" class="slider" id="division">
-                <h4 class=" w3-padding-16 green-color">EVENNESS</h4>
-                <input type="range" min="0" max="1" value="0" class="slider" id="evenness">
+                <img src="img/comp/thesis/render_0_0_4.gif" id="image" alt="render-0" style="width:100%">
+                <div class="w3-row-padding w3-padding-16">
+                    <div class="w3-third w3-margin-bottom">
+                        <h4 class="w3-padding-16 green-color">Type: <span id="type_i" class="w3-tag green-background">Curved Straight</span></h4>
+                        <input type="range" min="0" max="4" value="0" class="slider" id="type">
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <h4 class=" w3-padding-16 green-color">Division: <span id="div_i" class="w3-tag green-background">4</span></h4>
+                        <input type="range" min="0" max="1" value="1" class="slider" id="division">
+                    </div>
+                    <div class="w3-third w3-margin-bottom">
+                        <h4 class=" w3-padding-16 green-color">Evenness: <span id="even_i" class="w3-tag green-background">Even</span></h4>
+                        <input type="range" min="0" max="1" value="0" class="slider" id="evenness">
+                    </div>
+                </div>
             </div>
-        </div>
+            <br>
+            <!-- End interaction -->
+            
+            <!-- Video -->
+            <!-- <h3 class=" w3-padding-16 green-color">VIDEO</h3>
+
+            <div class="video-container">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/6j2RGksKR-M" frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div> -->
+            <!-- End video -->
+
+            <!-- Introduction -->
+            <div class="w3-row-padding">
+                <div class="w3-third">
+                    <h3 class=" w3-padding-16 green-color">INTRODUCTION</h3>
+                </div>
+                <div class="w3-twothird">
+                    <p class="w3-margin-bottom">The disciplinary theme, Responsive Architecture, was first introduced by Nicholas Negroponte during the late 1960’s. Precedents vary in different scales and technologies. And this thesis mainly focuses on the scale of facade. Unlike a lot of research and practical works only deal with the openness of the facade elements, the facade system in this thesis takes the reflection attribute of light into consideration, and aims to create a good interior light condition with sufficient and uniform light distribution.</p>
+                </div>
+            </div>   
+            <div class="w3-center w3-padding-16">
+                <img src="img/comp/thesis/background.jpg" alt="background" width="100%">
+                <p class="w3-small">Figure 1 Topic Background</p>
+            </div>
+            <!-- End introduction -->
+
+            <!-- Simulation -->
+            <div class="w3-row-padding">
+                <div class="w3-third">
+                    <h3 class=" w3-padding-16 green-color">EVALUATION</h3>
+                </div>
+                <div class="w3-twothird">
+                    <p class="w3-margin-bottom">To achieve the design target, I developed an evaluation tool to simulate the light behavior and optimize the facade geometries. For each input geometry, there is a parameter from 0 to 1 indicating the transformation of the surface. The simulation is agent-based and describes the behavior of light. It will give a grid analysis and a fitness value as the outputs. The fitness integrates both light illuminance and uniformity. Using the Genetic Algorithm, the optimization will return a set of relatively good parameters for the geometries.</p>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/thesis/simulation_algo.png" alt="algorithm" width="100%">
+                        <p class="w3-small">Figure 2 Evaluation Tool Algorithm</p>
+                        <img src="img/comp/thesis/optimization.jpg" alt="optimization" width="100%">
+                        <p class="w3-small">Figure 3 Single Run of Optimization</p>
+                        <!-- <img src="img/comp/thesis/design_space.png" alt="design_space" width="100%">
+                        <p class="w3-small">Figure 4 Design Space</p> -->
+                    </div>
+                </div>
+            </div>   
+
+            <div class="video-container">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/CuF3qIS4pVU" frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="w3-row-padding">
+                <br>
+                <div class="w3-third">
+                    <h3 class=" w3-padding-16 green-color">GEOMETRY</h3>
+                </div>
+                <div class="w3-twothird">
+                    <p class="w3-margin-bottom">After the first run of a group of simple geometries, we can tell that horizontal and diagonal transformations work better in balancing the light intensity and uniformity. Therefore, I developed more geometries within these two categories and evaluated their behaviors through time. The last type with horizontal twisted panels works best, since it could handle a large range of sunlight angles.</p>
+                </div>
+            </div>   
+
+            <div class="w3-center w3-padding-16">
+                <img src="img/comp/thesis/iteration1.jpg" alt="iteration1" width="100%">
+                <p class="w3-small">Figure 5 The First Iteration with Simple Geometries</p>
+                <img src="img/comp/thesis/iteration2.jpg" alt="iteration2" width="100%">
+                <p class="w3-small">Figure 6 The Second Iteration Geometry Design</p>
+                <img src="img/comp/thesis/evaluation_time.jpg" alt="evaluation" width="100%">
+                <p class="w3-small">Figure 7 Evaluation through Time</p>
+            </div>
+            <!-- End simulation -->
+
+            <!-- Prototype -->
+            <h3 class=" w3-padding-16 green-color">MATERIAL & PROTOTYPE</h3>
+
+            <div class="video-container">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/17LoIbkLG7s" frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="w3-center w3-padding-16">
+                <img src="img/comp/thesis/prototype_drawing.jpg" alt="prototype" width="100%">
+                <p class="w3-small">Figure 8 Prototype Explosion Drawing</p>
+                <img src="img/comp/thesis/profile_design.jpg" alt="profile_design" width="80%">
+                <p class="w3-small">Figure 9 Profile Design</p>
+            </div>
+            <!-- End prototype -->
+
+            <!-- System -->
+            <h3 class=" w3-padding-16 green-color">SYSTEM DESIGN</h3>
+
+            <div class="w3-center w3-padding-16">
+                <img src="img/comp/thesis/final.gif" alt="system" width="100%">
+                <p class="w3-small">Figure 10 System Design Rendering</p>
+            </div>
+            <!-- End system -->
+
+            <!-- Documentation -->
+            <h3 class=" w3-padding-16 green-color">DOCUMENTATION</h3>
+
+            <div class="w3-display-container w3-center">
+                <button class="img-button w3-display-left" onclick="lastImg()">
+                    <img src="img/left.png" style="width:30px">
+                </button>
+                <button class="img-button w3-display-right" onclick="nextImg()">
+                    <img src="img/right.png" style="width:30px">
+                </button>
+                <div class="w3-center">
+                    <img src="img/comp/thesis/Thesis_doc1.jpg" id="nImg" alt="Thesis-1" style="width:100%">
+                </div>
+            </div>
+            <br>
+            <br>
+            <!-- End documentation -->
         <!-- End page content -->
+        </div>
 
         <script>
             var even = document.getElementById("evenness");
             var type = document.getElementById("type");
             var div = document.getElementById("division");
+            var ei = document.getElementById("even_i");
+            var ti = document.getElementById("type_i");
+            var di = document.getElementById("div_i");
             var img = document.getElementById("image");
-            var index = 0;
-            
-            setImage(even, type, div);
+
+            setImage();
+            setText();
 
             even.oninput = function() {
-                setImage(even, type, div);
+                setImage();
+                setText();
             }
             type.oninput = function() {
-                setImage(even, type, div);
+                setImage();
+                setText();
             }
             div.oninput = function() {
-                setImage(even, type, div);
+                setImage();
+                setText();
             }
 
-            function setImage(e, t, d) {
-                ev = e.value;
-                tv = t.value;
-                dv = d.value;
-                img.src = "img/thesis/render_" + ev + "_" + tv + "_" + dv + ".gif";
+            function setImage() {
+                var ev = even.value;
+                var tv = type.value;
+                var dv = div.value;
+                img.src = "img/comp/thesis/render_" + ev + "_" + tv + "_" + dv + ".gif";
                 img.alt = "Render-" + ev + "_" + tv + "_" + dv;
             }
-            
+
+            function setText() {
+                var ev = even.value;
+                var tv = type.value;
+                var dv = div.value;
+                var es;
+                var ts;
+                var ds;
+                switch (ev) {
+                    case "0": 
+                        es = "Even";
+                        break;
+                    case "1":
+                        es = "Uneven";
+                        break;
+                }
+                switch (tv) {
+                    case "0": 
+                        ts = "Curved Straight";
+                        break;
+                    case "1":
+                        ts = "Curved C-Shape";
+                        break;
+                    case "2":
+                        ts = "Curved S-Shape";
+                        break;
+                    case "3":
+                        ts = "Polylined Straight";
+                        break;
+                    case "4":
+                        ts = "Polylined C-Shape";
+                        break;
+                }
+                switch (dv) {
+                    case "0": 
+                        ds = "2";
+                        break;
+                    case "1":
+                        ds = "4";
+                        break;
+                }
+                ei.innerText = es;
+                ti.innerText = ts;
+                di.innerText = ds;
+            }
         </script>
     </body>
 </html>
