@@ -73,6 +73,8 @@
                     <div class="w3-third w3-margin-bottom">
                         <h4 class="w3-padding-16 green-color">Type: <span id="type_i" class="w3-tag green-background">Curved Straight</span></h4>
                         <input type="range" min="0" max="4" value="0" class="slider" id="type">
+                        <br>
+                        <img src="img/comp/thesis/bubble_thesis.png" alt="bubble" style="width:100%">
                     </div>
                     <div class="w3-third w3-margin-bottom">
                         <h4 class=" w3-padding-16 green-color">Division: <span id="div_i" class="w3-tag green-background">4</span></h4>
@@ -84,12 +86,11 @@
                     </div>
                 </div>
             </div>
-            <br>
+
             <!-- End interaction -->
             
             <!-- Video -->
             <!-- <h3 class=" w3-padding-16 green-color">VIDEO</h3>
-
             <div class="video-container">
                 <iframe width="640" height="360" src="https://www.youtube.com/embed/6j2RGksKR-M" frameborder="0" 
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
@@ -103,7 +104,7 @@
                     <h3 class=" w3-padding-16 green-color">INTRODUCTION</h3>
                 </div>
                 <div class="w3-twothird">
-                    <p class="w3-margin-bottom">The disciplinary theme, Responsive Architecture, was first introduced by Nicholas Negroponte during the late 1960’s. Precedents vary in different scales and technologies. And this thesis mainly focuses on the scale of facade. Unlike a lot of research and practical works only deal with the openness of the facade elements, the facade system in this thesis takes the reflection attribute of light into consideration, and aims to create a good interior light condition with sufficient and uniform light distribution.</p>
+                    <p class="w3-padding-16">The disciplinary theme, Responsive Architecture, was first introduced by Nicholas Negroponte during the late 1960’s. Precedents vary in different scales and technologies. And this thesis mainly focuses on the scale of facade. Unlike a lot of research and practical works only deal with the openness of the facade elements, the facade system in this thesis takes the reflection attribute of light into consideration, and aims to create a good interior light condition with sufficient and uniform light distribution.</p>
                 </div>
             </div>   
             <div class="w3-center w3-padding-16">
@@ -115,17 +116,15 @@
             <!-- Simulation -->
             <div class="w3-row-padding">
                 <div class="w3-third">
-                    <h3 class=" w3-padding-16 green-color">EVALUATION</h3>
+                    <h3 class=" w3-padding-16 green-color">SIMULATION</h3>
                 </div>
                 <div class="w3-twothird">
-                    <p class="w3-margin-bottom">To achieve the design target, I developed an evaluation tool to simulate the light behavior and optimize the facade geometries. For each input geometry, there is a parameter from 0 to 1 indicating the transformation of the surface. The simulation is agent-based and describes the behavior of light. It will give a grid analysis and a fitness value as the outputs. The fitness integrates both light illuminance and uniformity. Using the Genetic Algorithm, the optimization will return a set of relatively good parameters for the geometries.</p>
+                    <p class="w3-padding-16">To achieve the design target, I developed an evaluation tool to simulate the light behavior and optimize the facade geometries. For each input geometry, there is a parameter from 0 to 1 indicating the transformation of the surface. The simulation is agent-based and describes the behavior of light. It will give a grid analysis and a fitness value as the outputs. The fitness integrates both light illuminance and uniformity. Using the Genetic Algorithm, the optimization will return a set of relatively good parameters for the geometries.</p>
                     <div class="w3-center w3-padding-16">
                         <img src="img/comp/thesis/simulation_algo.png" alt="algorithm" width="100%">
                         <p class="w3-small">Figure 2 Evaluation Tool Algorithm</p>
                         <img src="img/comp/thesis/optimization.jpg" alt="optimization" width="100%">
                         <p class="w3-small">Figure 3 Single Run of Optimization</p>
-                        <!-- <img src="img/comp/thesis/design_space.png" alt="design_space" width="100%">
-                        <p class="w3-small">Figure 4 Design Space</p> -->
                     </div>
                 </div>
             </div>   
@@ -139,10 +138,10 @@
             <div class="w3-row-padding">
                 <br>
                 <div class="w3-third">
-                    <h3 class=" w3-padding-16 green-color">GEOMETRY</h3>
+                    <h3 class="w3-padding-16 green-color">GEOMETRY</h3>
                 </div>
                 <div class="w3-twothird">
-                    <p class="w3-margin-bottom">After the first run of a group of simple geometries, we can tell that horizontal and diagonal transformations work better in balancing the light intensity and uniformity. Therefore, I developed more geometries within these two categories and evaluated their behaviors through time. The last type with horizontal twisted panels works best, since it could handle a large range of sunlight angles.</p>
+                    <p class="w3-padding-16">After the first run of a group of simple geometries, we can tell that horizontal and diagonal transformations work better in balancing the light intensity and uniformity. Therefore, I developed more geometries within these two categories and evaluated their behaviors through time. The last type with horizontal twisted panels works best, since it could handle a large range of sunlight angles.</p>
                 </div>
             </div>   
 
@@ -157,7 +156,14 @@
             <!-- End simulation -->
 
             <!-- Prototype -->
-            <h3 class=" w3-padding-16 green-color">MATERIAL & PROTOTYPE</h3>
+            <div class="w3-row-padding">
+                <div class="w3-third">
+                    <h3 class=" w3-padding-16 green-color">MATERIAL & PROTOTYPE</h3>
+                </div>
+                <div class="w3-twothird">
+                    <p class="w3-padding-16">Temprary Paragraph</p>
+                </div>
+            </div>
 
             <div class="video-container">
                 <iframe width="640" height="360" src="https://www.youtube.com/embed/17LoIbkLG7s" frameborder="0" 
@@ -167,17 +173,30 @@
             <div class="w3-center w3-padding-16">
                 <img src="img/comp/thesis/prototype_drawing.jpg" alt="prototype" width="100%">
                 <p class="w3-small">Figure 8 Prototype Explosion Drawing</p>
-                <img src="img/comp/thesis/profile_design.jpg" alt="profile_design" width="80%">
+                <img src="img/comp/thesis/profile_design.jpg" alt="profile_design" width="70%">
                 <p class="w3-small">Figure 9 Profile Design</p>
             </div>
             <!-- End prototype -->
 
             <!-- System -->
-            <h3 class=" w3-padding-16 green-color">SYSTEM DESIGN</h3>
+            <div class="w3-row-padding">
+                <div class="w3-third">
+                    <h3 class=" w3-padding-16 green-color">SYSTEM DESIGN</h3>
+                </div>
+                <div class="w3-twothird">
+                    <p class="w3-padding-16">Temprary Paragraph</p>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/thesis/section.jpg" alt="section" width="100%">
+                        <p class="w3-small">Figure 10 Section Details</p>
+                    </div>
+                </div>
+            </div>
 
             <div class="w3-center w3-padding-16">
-                <img src="img/comp/thesis/final.gif" alt="system" width="100%">
-                <p class="w3-small">Figure 10 System Design Rendering</p>
+                <img src="img/comp/thesis/render_0_1_1.gif" alt="system" width="100%">
+                <p class="w3-small">Figure 11 Interior Animation</p>
+                <img src="img/comp/thesis/application.gif" alt="application" width="100%">
+                <p class="w3-small">Figure 12 System Application to Highrise and Multistorey Buildings</p>
             </div>
             <!-- End system -->
 
