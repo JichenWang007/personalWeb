@@ -68,7 +68,7 @@
             <!-- <h3 class=" w3-padding-16 green-color">INTERACTION</h3> -->
             <br>
             <div class="w3-center">
-                <img src="img/comp/thesis/render_0_0_4.gif" id="image" alt="render-0" style="width:100%">
+                <img src="img/comp/thesis/render_0_0_4.gif" id="render" alt="Render_0_0_4" style="width:100%">
                 <div class="w3-row-padding w3-padding-16">
                     <div class="w3-third w3-margin-bottom">
                         <h4 class="w3-padding-16 green-color">Type: <span id="type_i" class="w3-tag green-background">Curved Straight</span></h4>
@@ -87,16 +87,20 @@
                 </div>
             </div>
 
+            <div class="w3-row-padding">
+                <div class="w3-twothird">
+                    <img src="img/comp/thesis/timeline_7.jpg" id="timeline" alt="Timeline-7" style="width:100%">
+                </div>
+                <div class="w3-third w3-center">
+                    <img src="img/comp/thesis/simu_7.jpg" id="simulation" alt="Simulation-7" style="width:70%">
+                    <h4 class=" w3-padding-16 green-color">Time: <span id="time_i" class="w3-tag green-background">7 : 00</span></h4>
+                    <input type="range" min="7" max="17" value="7" class="slider" id="time">
+                    <br>
+                    <img src="img/comp/thesis/bubble_thesis2.png" alt="bubble" style="width:100%">
+                </div>
+                
+            </div>
             <!-- End interaction -->
-            
-            <!-- Video -->
-            <!-- <h3 class=" w3-padding-16 green-color">VIDEO</h3>
-            <div class="video-container">
-                <iframe width="640" height="360" src="https://www.youtube.com/embed/6j2RGksKR-M" frameborder="0" 
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
-            </div> -->
-            <!-- End video -->
 
             <!-- Introduction -->
             <div class="w3-row-padding">
@@ -127,7 +131,7 @@
                         <p class="w3-small">Figure 3 Single Run of Optimization</p>
                     </div>
                 </div>
-            </div>   
+            </div>
 
             <div class="video-container">
                 <iframe width="640" height="360" src="https://www.youtube.com/embed/CuF3qIS4pVU" frameborder="0" 
@@ -227,10 +231,18 @@
             var ei = document.getElementById("even_i");
             var ti = document.getElementById("type_i");
             var di = document.getElementById("div_i");
-            var img = document.getElementById("image");
+            var img = document.getElementById("render");
+
+            var time = document.getElementById("time");
+            var timei = document.getElementById("time_i");
+            var timeline = document.getElementById("timeline");
+            var simu = document.getElementById("simulation");
 
             setImage();
             setText();
+
+            setTimeline();
+            setTimelineText();
 
             even.oninput = function() {
                 setImage();
@@ -245,12 +257,17 @@
                 setText();
             }
 
+            time.oninput = function() {
+                setTimeline();
+                setTimelineText();
+            }
+
             function setImage() {
                 var ev = even.value;
                 var tv = type.value;
                 var dv = div.value;
                 img.src = "img/comp/thesis/render_" + ev + "_" + tv + "_" + dv + ".gif";
-                img.alt = "Render-" + ev + "_" + tv + "_" + dv;
+                img.alt = "Render_" + ev + "_" + tv + "_" + dv;
             }
 
             function setText() {
@@ -296,6 +313,20 @@
                 ei.innerText = es;
                 ti.innerText = ts;
                 di.innerText = ds;
+            }
+
+            function setTimeline() {
+                var tv = time.value;
+                timeline.src = "img/comp/thesis/timeline_" + tv + ".jpg";
+                timeline.alt = "Timeline-" + tv;
+                simu.src = "img/comp/thesis/simu_" + tv + ".jpg";
+                simu.alt = "Simulation-" + tv;
+            }
+
+            function setTimelineText() {
+                var tv = time.value;
+                timei.innerText = tv + " : 00";
+
             }
         </script>
     </body>
