@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="my_style.css">
+    <link rel="stylesheet" href="loader_gooey.css">
 
     <head>
         <title> Computation Project </title>
@@ -11,109 +12,136 @@
         <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
     </head>
 
-    <body>
-        <!-- Navbar (sit on top) -->
-        <div class="w3-top">
-            <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-                <a href="index.html#home" class="w3-bar-item w3-button"><b>JICHEN</b> WANG</a>
-                <!-- Float links to the right. Hide them on small screens -->
-                <div class="w3-right w3-hide-small">
-                    <a href="index.html#arch" class="w3-bar-item w3-button">Architecture</a>
-                    <a href="index.html#comp" class="w3-bar-item w3-button">Computation</a>
-                    <a href="index.html#about" class="w3-bar-item w3-button">About</a>
-                </div>
+    <body onload="load()">
+        <!-- Loader -->
+        <div id="loader" class="gooey">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-
-        <!-- Header -->
-        <header class="w3-wide project-header" >
-            <div class="w3-center w3-padding-16">
-                <h1 class="w3-xlarge"><b>PHOTON</b></h1>
-                <p class="w3-middle w3-text-gray">Facade Geometry Optimization with Real-time Agent-based Light Simulation</p>
-            </div>
-        </header>
-
-        <!-- Page content -->
-        <div class="w3-content w3-display-container limit-width">
-            <div class="video-container">
-                <!-- <video Width="1440" height="810" autoplay>
-                    <source src="vid/Autoilet.mp4" type="video/mp4">
-                </video> -->
-                <iframe width="640" height="360" src="https://www.youtube.com/embed/CuF3qIS4pVU" frameborder="0" 
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                </iframe>
-            </div>
-
-            <div class="w3-container w3-white w3-margin">
-                <h3 class=" w3-padding-16 green-color">PROBLEM</h3>
-                <p class="w3-margin-bottom">For light responsive facade design, we want to achieve a better interior light condition with control of transformation of the facade units. However, during the design process, there are problems with selecting a proper tool to simulate this process and make the right choice.</p>
-                <p class="w3-margin-bottom">Most of the light simulation tools in the field are featured as accurate while taking a relatively long time to calculate, and they do not take curved surfaces as inputs. However, for early design process or for responsive facade elements, the inputs of facade unit will change fast after each iteration of simulation. Therefore the simulation tool requires fast calculation (almost real-time) , input flexibility and does not have to be so accurate as long as it can describe the basic behavior of light.</p>
-                <div class="w3-center w3-padding-16">
-                    <img src="img/comp/photon/responsive_facade.png" alt="responsive_facade" width="70%">
-                    <p class="w3-small">Figure 1 Responsive facade examples</p>
-                    <!-- <p class="w3-small">1. One Ocean, Soma</p>
-                    <p class="w3-small">2. Kiefer Technic Showroom, Ernst Giselbrecht + Partner</p>
-                    <p class="w3-small">3. Media-ICT, Enric Ruiz Geli</p>
-                    <p class="w3-small">4. Hazza Bin Zayed Stadium, Pattern Design</p> -->
-                </div>
-                <h3 class=" w3-padding-16 green-color">WORKFLOW</h3>
-                <div class="w3-center w3-padding-16">
-                    <img src="img/comp/photon/workflow.png" alt="workflow" width="70%">
-                    <p class="w3-small">Figure 2 Workflow for the tool</p>
-                </div>
-
-                <h3 class=" w3-padding-16 green-color">INPUT</h3>
-                <p class="w3-margin-bottom">For each unit, there is a real number range from 0 to 1 which indicates the transformation of the unit. It can represent rotation, bending and also other transformation methods. This representation gives a good description of features for the facade and can be further utilized in the optimization. Users can also choose a specific location and time according to their requirement. </p>
-                <div class="w3-center w3-padding-16">
-                    <img src="img/comp/photon/input_geometry.png" alt="geometry" width="70%">
-                    <p class="w3-small">Figure 3 Input geometries</p>
-                </div>
-                <div class="w3-center w3-padding-16">
-                    <img src="img/comp/photon/sun_angle.gif" alt="sun_angle" width="100%">
-                    <p class="w3-small">Figure 4 Input sun angles</p>
-                </div>
-                <h3 class=" w3-padding-16 green-color">SIMULATION</h3>
-                <p class="w3-margin-bottom">The evaluator uses agent-based algorithm and can take any set of surfaces as input and evaluate the sunlight condition given certain sun angle. It will give both the grid analyzation and numbers of average illuminance and uniformity as output. The benefit of this tool is it simplifies the simulation process and gives immediate output which is suitable for responsive optimization.</p>
-                <div class="w3-center w3-padding-16">
-                    <div class="w3-row-padding">
-                        <div class="w3-third">
-                            <img src="img/comp/photon/material_translucent.gif" alt="translucent" width="100%">
-                        </div>
-                        <div class="w3-third">
-                            <img src="img/comp/photon/material_transparent.gif" alt="transparent" width="100%">
-                        </div>
-                        <div class="w3-third">
-                            <img src="img/comp/photon/material_opaque.gif" alt="opaque" width="100%">
-                        </div>
+        
+        <div id="content" class="animate-bottom">
+            <!-- Navbar (sit on top) -->
+            <div class="w3-top">
+                <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                    <a href="index.html" class="w3-bar-item w3-button"><b>JICHEN</b> WANG</a>
+                    <!-- Float links to the right. Hide them on small screens -->
+                    <div class="w3-right w3-hide-small">
+                        <a href="arch.html" class="w3-bar-item w3-button">Architecture</a>
+                        <a href="comp.html" class="w3-bar-item w3-button">Computation</a>
+                        <a href="about.html" class="w3-bar-item w3-button">About</a>
                     </div>
-                    <p class="w3-small">Figure 5 Agent-based simulation process</p>
-                </div>
-
-                <h3 class=" w3-padding-16 green-color">OPTIMIZATION</h3>
-                <p class="w3-margin-bottom">The optimizer applies GA (Genetic Algorithm) and is able to adjust the transformation parameters according to the fitness generated by the evaluator. The following two objective functions have opsite relationship between each other, thus the final fitness function is to find a balance between them.</p>
-                <p class="w3-margin-bottom">A. Illuminance: Average of cell values.</p>
-                <img src="img/comp/photon/objective1.png" alt="objective1" height="50">
-                <p class="w3-margin-bottom">B. Uniformity: To avoid extreme small value for this objective (since Emin will sometimes become 0), we change it from Emin/Emax to negative standard deviation of the cell values.</p>
-                <img src="img/comp/photon/objective2.png" alt="objective2" height="50">
-                <p class="w3-margin-bottom"></p>
-                <div class="w3-center w3-padding-16">
-                    <img src="img/comp/photon/optimization.jpg" alt="optimization" width="100%">
-                    <p class="w3-small">Figure 6 Optimization diagram</p>
-                </div>
-
-                <h3 class=" w3-padding-16 green-color">DESIGN SPACE</h3>
-                <div class="w3-center w3-padding-16">
-                    <img src="img/comp/photon/design_space.png" alt="design_space" width="100%">
-                    <p class="w3-small">Figure 7 Design space for a single type</p>
-                </div>
-
-                <h3 class=" w3-padding-16 green-color">DESIGN CHOICE</h3>
-                <div class="w3-center w3-padding-16">
-                    <img src="img/comp/photon/design_choice.png" alt="design_choice" width="100%">
-                    <p class="w3-small">Figure 8 Design choice after evaluation</p>
                 </div>
             </div>
-        <!-- End page content -->
-        </div>
+
+           <!-- Header -->
+            <header class="w3-wide project-header" >
+                <div class="w3-center w3-padding-16">
+                    <h1 class="w3-xlarge"><b>PHOTON</b></h1>
+                    <p class="w3-middle w3-text-gray">Facade Geometry Optimization with Real-time Agent-based Light Simulation</p>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <div class="w3-content w3-display-container limit-width">
+                <div class="video-container">
+                    <!-- <video Width="1440" height="810" autoplay>
+                        <source src="vid/Autoilet.mp4" type="video/mp4">
+                    </video> -->
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/CuF3qIS4pVU" frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="w3-container w3-white w3-margin">
+                    <h3 class=" w3-padding-16 green-color">PROBLEM</h3>
+                    <p class="w3-margin-bottom">For light responsive facade design, we want to achieve a better interior light condition with control of transformation of the facade units. However, during the design process, there are problems with selecting a proper tool to simulate this process and make the right choice.</p>
+                    <p class="w3-margin-bottom">Most of the light simulation tools in the field are featured as accurate while taking a relatively long time to calculate, and they do not take curved surfaces as inputs. However, for early design process or for responsive facade elements, the inputs of facade unit will change fast after each iteration of simulation. Therefore the simulation tool requires fast calculation (almost real-time) , input flexibility and does not have to be so accurate as long as it can describe the basic behavior of light.</p>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/photon/responsive_facade.png" alt="responsive_facade" width="70%">
+                        <p class="w3-small">Figure 1 Responsive facade examples</p>
+                        <!-- <p class="w3-small">1. One Ocean, Soma</p>
+                        <p class="w3-small">2. Kiefer Technic Showroom, Ernst Giselbrecht + Partner</p>
+                        <p class="w3-small">3. Media-ICT, Enric Ruiz Geli</p>
+                        <p class="w3-small">4. Hazza Bin Zayed Stadium, Pattern Design</p> -->
+                    </div>
+                    <h3 class=" w3-padding-16 green-color">WORKFLOW</h3>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/photon/workflow.png" alt="workflow" width="70%">
+                        <p class="w3-small">Figure 2 Workflow for the tool</p>
+                    </div>
+
+                    <h3 class=" w3-padding-16 green-color">INPUT</h3>
+                    <p class="w3-margin-bottom">For each unit, there is a real number range from 0 to 1 which indicates the transformation of the unit. It can represent rotation, bending and also other transformation methods. This representation gives a good description of features for the facade and can be further utilized in the optimization. Users can also choose a specific location and time according to their requirement. </p>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/photon/input_geometry.png" alt="geometry" width="70%">
+                        <p class="w3-small">Figure 3 Input geometries</p>
+                    </div>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/photon/sun_angle.gif" alt="sun_angle" width="100%">
+                        <p class="w3-small">Figure 4 Input sun angles</p>
+                    </div>
+                    <h3 class=" w3-padding-16 green-color">SIMULATION</h3>
+                    <p class="w3-margin-bottom">The evaluator uses agent-based algorithm and can take any set of surfaces as input and evaluate the sunlight condition given certain sun angle. It will give both the grid analyzation and numbers of average illuminance and uniformity as output. The benefit of this tool is it simplifies the simulation process and gives immediate output which is suitable for responsive optimization.</p>
+                    <div class="w3-center w3-padding-16">
+                        <div class="w3-row-padding">
+                            <div class="w3-third">
+                                <img src="img/comp/photon/material_translucent.gif" alt="translucent" width="100%">
+                            </div>
+                            <div class="w3-third">
+                                <img src="img/comp/photon/material_transparent.gif" alt="transparent" width="100%">
+                            </div>
+                            <div class="w3-third">
+                                <img src="img/comp/photon/material_opaque.gif" alt="opaque" width="100%">
+                            </div>
+                        </div>
+                        <p class="w3-small">Figure 5 Agent-based simulation process</p>
+                    </div>
+
+                    <h3 class=" w3-padding-16 green-color">OPTIMIZATION</h3>
+                    <p class="w3-margin-bottom">The optimizer applies GA (Genetic Algorithm) and is able to adjust the transformation parameters according to the fitness generated by the evaluator. The following two objective functions have opsite relationship between each other, thus the final fitness function is to find a balance between them.</p>
+                    <p class="w3-margin-bottom">A. Illuminance: Average of cell values.</p>
+                    <img src="img/comp/photon/objective1.png" alt="objective1" height="50">
+                    <p class="w3-margin-bottom">B. Uniformity: To avoid extreme small value for this objective (since Emin will sometimes become 0), we change it from Emin/Emax to negative standard deviation of the cell values.</p>
+                    <img src="img/comp/photon/objective2.png" alt="objective2" height="50">
+                    <p class="w3-margin-bottom"></p>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/photon/optimization.jpg" alt="optimization" width="100%">
+                        <p class="w3-small">Figure 6 Optimization diagram</p>
+                    </div>
+
+                    <h3 class=" w3-padding-16 green-color">DESIGN SPACE</h3>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/photon/design_space.png" alt="design_space" width="100%">
+                        <p class="w3-small">Figure 7 Design space for a single type</p>
+                    </div>
+
+                    <h3 class=" w3-padding-16 green-color">DESIGN CHOICE</h3>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/photon/design_choice.png" alt="design_choice" width="100%">
+                        <p class="w3-small">Figure 8 Design choice after evaluation</p>
+                    </div>
+                </div>
+            <!-- End page content -->
+            </div>
+
+       </div>
     </body>
+
+    <script>
+        var myVar;
+
+        function load() {
+            myVar = setTimeout(showPage, 0);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+    </script>
+
 </html>

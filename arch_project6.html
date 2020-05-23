@@ -11,34 +11,61 @@
         <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
     </head>
 
-    <body>
-        <!-- Navbar (sit on top) -->
-        <div class="w3-top">
-            <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-                <a href="index.html#home" class="w3-bar-item w3-button"><b>JICHEN</b> WANG</a>
-                <!-- Float links to the right. Hide them on small screens -->
-                <div class="w3-right w3-hide-small">
-                    <a href="index.html#arch" class="w3-bar-item w3-button">Architecture</a>
-                    <a href="index.html#comp" class="w3-bar-item w3-button">Computation</a>
-                    <a href="index.html#about" class="w3-bar-item w3-button">About</a>
+    <body onload="load()">
+        <!-- Loader -->
+        <div id="loader" class="gooey">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div id="content" class="animate-bottom">
+
+            <!-- Navbar (sit on top) -->
+            <div class="w3-top">
+                <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                    <a href="index.html" class="w3-bar-item w3-button"><b>JICHEN</b> WANG</a>
+                    <!-- Float links to the right. Hide them on small screens -->
+                    <div class="w3-right w3-hide-small">
+                        <a href="arch.html" class="w3-bar-item w3-button">Architecture</a>
+                        <a href="comp.html" class="w3-bar-item w3-button">Computation</a>
+                        <a href="about.html" class="w3-bar-item w3-button">About</a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Header -->
-        <header class="w3-wide project-header" >
-            <div class="w3-center w3-padding-16">
-                <h1 class="w3-xlarge">OTHER WORKS</h1>
-                <p class="w3-middle w3-text-gray">Art | Handmake | Design</p>
-            </div>
-        </header>
+            <!-- Header -->
+            <header class="w3-wide project-header" >
+                <div class="w3-center w3-padding-16">
+                    <h1 class="w3-xlarge">OTHER WORKS</h1>
+                    <p class="w3-middle w3-text-gray">Art | Handmake | Design</p>
+                </div>
+            </header>
 
-        <!-- Page content -->
-        <div class="w3-content w3-display-container limit-width">
-            <div class="w3-center">
-                <img src="img/arch/A30.jpg" id="nImg" alt="Arch_P1-1" style="width:100%">
+            <!-- Page content -->
+            <div class="w3-content w3-display-container limit-width">
+                <div class="w3-center">
+                    <img src="img/arch/A30.jpg" id="nImg" alt="Arch_P1-1" style="width:100%">
+                </div>
+            <!-- End page content -->
             </div>
-        <!-- End page content -->
         </div>
     </body>
+
+    <script>
+        var myVar;
+
+        function load() {
+            myVar = setTimeout(showPage, 0);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+    </script>
+
 </html>

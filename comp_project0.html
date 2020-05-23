@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="my_style.css">
+    <link rel="stylesheet" href="loader_gooey.css">
+
+    <head>
+        <title> Computation Project </title>
+        <link rel="icon" href="img/logo.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+    </head>
+
+    <body onload="load()">
+        <!-- Loader -->
+        <div id="loader" class="gooey">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div id="content" class="animate-bottom">
+            <!-- Navbar (sit on top) -->
+            <div class="w3-top">
+                <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+                    <a href="index.html" class="w3-bar-item w3-button"><b>JICHEN</b> WANG</a>
+                    <!-- Float links to the right. Hide them on small screens -->
+                    <div class="w3-right w3-hide-small">
+                        <a href="arch.html" class="w3-bar-item w3-button">Architecture</a>
+                        <a href="comp.html" class="w3-bar-item w3-button">Computation</a>
+                        <a href="about.html" class="w3-bar-item w3-button">About</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Header -->
+            <header class="w3-wide project-header" >
+                <div class="w3-center w3-padding-16">
+                    <h1 class="w3-xlarge"><b>AU</b>TOILET</h1>
+                    <p class="w3-middle w3-text-gray">A grasshopper component automatically generates the arrangement of an ADA toilet.</p>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <div class="w3-content w3-display-container limit-width">
+                <div class="video-container">
+                    <!-- <video Width="1440" height="810" autoplay>
+                        <source src="vid/Autoilet.mp4" type="video/mp4">
+                    </video> -->
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/o_27Aj0vOdw" frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="w3-container w3-white w3-margin">
+                    <h3 class=" w3-padding-16 green-color">INTRODUCTION</h3>
+                    <p class="w3-margin-bottom">Inspired by Finch that generates floor plan variation, we designed a parametric design tool AUTOILET for a single-user toilet room. When designing a single-occupant toilet, architects should satisfy the Americans with Disabilities Act (ADA) while making an effort to fit the space into the overall design of architecture. The satisfaction of ADA includes arranging restroom elements such as toilet, sink and the clearances of each element. Each clearance can be overlapped but should not touch other elements directly. Figure 1 explains the elements and their clearance spaces.</p>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/autoilet/ADArestroom.jpg" alt="ADArestroom" width="30%">
+                        <p class="w3-small">Figure 1 The ADA compliant restroom</p>
+                    </div>
+                    <h3 class=" w3-padding-16 green-color">ALGORITHM</h3>
+                    <p class="w3-margin-bottom">Basically there are three groups of input. First, the dimension of the room which includes the width x and length y. Second, a boolean which indicates whether the room is L-shape or not and the dimension of the corner with width x0 and length y0. Third, the position of the door. As a result of the toilet arrangement, certain elements should be placed in the room space, for example a door(as input), a toilet, a sink and an ADA circle. For each element, there is a geometry of this element as well as a clearance.</p>
+                    <p class="w3-margin-bottom">There are two main restrictions: First, all the geometry and clearance of each element should be within the boundary of the room; Second, for each element, any other object’s geometry cannot touch the clearance of this element. With these rules as restrictions, we can generate solutions with a recursion algorithm. For all the elements one by one, we iterate through the possible position for this element and if it is valid, we store this temporary position and go to another element. If there is no solution for the next element, the solution will go back, delete this temporary position and continue iterating through the possibilities. Finally, if all the elements are valid, we can assume that we found a solution for this problem. Then we return the geometries and the clearances of all elements we’ve found in the solution.</p>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/autoilet/algorithm.png" alt="algorithm" width="70%">
+                        <p class="w3-small">Figure 2 Algorithm of ADA toilet layout</p>
+                    </div>
+                    <div class="w3-center w3-padding-16">
+                            <img src="img/comp/autoilet/elements.jpg" alt="elements" width="100%">
+                            <p class="w3-small">Figure 3 Diagram for elements</p>
+                        </div>
+                    <h3 class=" w3-padding-16 green-color">DESIGN SPACE</h3>
+                    <p class="w3-margin-bottom">The first decision to make when using AUToilet is whether the toilet floor plan is rectangular or L-shape that contains a blank space. The option enables us to consider cases that can happen in practice. For instance, a restroom can be designed right next to a column, a closet, or an equipment space. The next step depends on the users. They can either adjust the size of the floor plan, blank space, or change the door position. If AUToilet succeeds to generate a possible plan, it will comment out that it succeeds. Otherwise, it will ask the user to change the input parameters.</p>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/autoilet/design_space.jpg" alt="designspace" width="100%">
+                        <p class="w3-small">Figure 4 Diagram for design space</p>
+                    </div>
+                    <div class="w3-center w3-padding-16">
+                        <img src="img/comp/autoilet/possibilities.jpg" alt="outcomes" width="100%">
+                        <p class="w3-small">Figure 5 Generated outcomes</p>
+                    </div>
+                </div>
+            <!-- End page content -->
+            </div>
+
+       </div>
+    </body>
+
+    <script>
+        var myVar;
+
+        function load() {
+            myVar = setTimeout(showPage, 0);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+    </script>
+
+</html>
