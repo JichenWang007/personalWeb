@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="my_style.css">
+    <link rel="stylesheet" href="loader_gooey.css">
 
     <head>
         <title> Computation Project </title>
@@ -11,7 +12,18 @@
         <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
     </head>
 
-    <body>
+    <body onload="load()">
+        <!-- Loader -->
+        <div id="loader" class="gooey">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div id="content" class="animate-bottom">
             <!-- Navbar (sit on top) -->
             <div class="w3-top">
                 <div class="w3-bar w3-white w3-wide w3-padding w3-card">
@@ -25,29 +37,39 @@
                 </div>
             </div>
 
-        <!-- Header -->
-        <header class="w3-wide project-header" >
-            <div class="w3-center w3-padding-16">
-                <h1 class="w3-xlarge"><b>TRANSCENDING</b></h1>
-                <p class="w3-middle w3-text-gray">A light-audio installation interacted with people's movement in a transition space.</p>
+            <!-- Header -->
+            <header class="w3-wide project-header" >
+                <div class="w3-center w3-padding-16">
+                    <h1 class="w3-xlarge"><b>TRANSCENDING</b></h1>
+                    <p class="w3-middle w3-text-gray">A light-audio installation interacted with people's movement in a transition space.</p>
+                </div>
+            </header>
+
+            <!-- Page content -->
+            <div class="w3-content w3-display-container limit-width">
+                <div class="video-container">
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/D7Od4NPJPgc" frameborder="0" 
+                    allow="autoplay; fullscreen" allowfullscreen>
+                    </iframe>
+                </div>
+
+            <!-- End page content -->
             </div>
-        </header>
 
-        <!-- Page content -->
-        <div class="w3-content w3-display-container limit-width">
-            <div class="video-container">
-                <!-- <video Width="1440" height="810" autoplay>
-                    <source src="vid/Autoilet.mp4" type="video/mp4">
-                </video> -->
-                <iframe width="640" height="360" src="https://www.youtube.com/embed/D7Od4NPJPgc" frameborder="0" 
-                allow="autoplay; fullscreen" allowfullscreen>
-                </iframe>
-            </div>
-
-            <!-- <div class="w3-container w3-white w3-margin">
-
-            </div> -->
-        <!-- End page content -->
-        </div>
+       </div>
     </body>
+
+    <script>
+        var myVar;
+
+        function load() {
+            myVar = setTimeout(showPage, 0);
+        }
+
+        function showPage() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+    </script>
+
 </html>
